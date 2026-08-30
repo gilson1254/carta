@@ -1,0 +1,530 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para você 💛</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       CENA INICIAL
+  ========================== -->
+
+  <div id="intro" class="scene active">
+
+    <div class="grain"></div>
+
+    <div class="petals">
+      <span>✿</span>
+      <span>❀</span>
+      <span>✽</span>
+      <span>✿</span>
+      <span>❁</span>
+      <span>✽</span>
+    </div>
+
+    <div class="floating-flower flower-a"></div>
+    <div class="floating-flower flower-b"></div>
+    <div class="floating-flower flower-c"></div>
+    <div class="floating-flower flower-d"></div>
+
+    <div class="envelope-stage">
+
+      <div class="envelope-shadow"></div>
+
+      <button id="openBtn" class="envelope" aria-label="Abrir a carta">
+
+        <div class="letter-peek">
+          <span>for you</span>
+        </div>
+
+        <div class="flap"></div>
+
+        <div class="side left"></div>
+        <div class="side right"></div>
+        <div class="bottom"></div>
+
+        <div class="envelope-bouquet">
+
+          <span class="stem st1"></span>
+          <span class="stem st2"></span>
+          <span class="stem st3"></span>
+
+          <span class="leaf lf1"></span>
+          <span class="leaf lf2"></span>
+          <span class="leaf lf3"></span>
+          <span class="leaf lf4"></span>
+
+          <span class="flower-mini fm1">✿</span>
+          <span class="flower-mini fm2">✿</span>
+          <span class="flower-mini fm3">❀</span>
+
+        </div>
+
+        <span class="seal">♥</span>
+
+      </button>
+
+    </div>
+
+    <div class="hint">
+
+      <span class="heart">♡</span>
+
+      <span>to someone special</span>
+
+      <small>tap to open</small>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       CARTA ABERTA
+  ========================== -->
+
+  <div id="inside" class="scene">
+
+    <div class="inside-bg"></div>
+
+    <div class="falling-petals"></div>
+
+
+    <main class="letter-card">
+
+      <button id="closeBtn" class="close" aria-label="Fechar">
+        ×
+      </button>
+
+
+      <div class="top-decoration">
+
+        <span>❦</span>
+        <span>✿</span>
+        <span>❦</span>
+
+      </div>
+
+
+      <p class="eyebrow">
+        A LITTLE SOMETHING FOR YOU
+      </p>
+
+
+      <h1>
+        Made with<br>
+        <em>love</em> & yellow
+      </h1>
+
+
+      <!-- =========================
+           GIRASSOL
+      ========================== -->
+
+      <div class="sunflower">
+
+        <div class="petal p1"></div>
+        <div class="petal p2"></div>
+        <div class="petal p3"></div>
+        <div class="petal p4"></div>
+        <div class="petal p5"></div>
+        <div class="petal p6"></div>
+        <div class="petal p7"></div>
+        <div class="petal p8"></div>
+
+        <div class="center">
+          ♥
+        </div>
+
+      </div>
+
+
+      <p class="message">
+
+        Porque algumas pessoas merecem<br>
+        uma carta que pareça um pequeno jardim.
+
+      </p>
+
+
+      <button id="moreBtn" class="more">
+
+        there's more here
+
+        <span>→</span>
+
+      </button>
+
+
+      <!-- =========================
+           CONTEÚDO EXTRA
+      ========================== -->
+
+      <section id="moreContent" class="more-content">
+
+        <div class="line"></div>
+
+
+        <p>
+          Você abriu a carta. 💛
+        </p>
+
+
+        <p>
+          Agora fica um pouquinho mais...
+        </p>
+
+
+        <!-- =========================
+             CASSETE
+        ========================== -->
+
+        <div class="cassette">
+
+          <div class="cassette-label">
+            songs for you
+          </div>
+
+          <div class="cassette-window">
+
+            <i></i>
+            <b></b>
+            <i></i>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================
+             MÚSICA
+        ========================== -->
+
+        <div class="music">
+
+          <div>
+
+            <strong id="songName">
+              Uma música para você
+            </strong>
+
+            <small>
+              aperte o botão para ouvir ♫
+            </small>
+
+          </div>
+
+
+          <button id="musicBtn" aria-label="Tocar música">
+            ▶
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================
+       YOUTUBE PLAYER
+       Vídeo: cyX-BUNcCqs
+  ========================== -->
+
+  <div
+    id="youtube-player"
+    style="
+      position: fixed;
+      width: 1px;
+      height: 1px;
+      left: -10px;
+      bottom: -10px;
+      opacity: 0;
+      pointer-events: none;
+      overflow: hidden;
+    ">
+  </div>
+
+
+  <!-- API DO YOUTUBE -->
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =====================================
+       ELEMENTOS
+    ===================================== */
+
+    const intro = document.getElementById("intro");
+    const inside = document.getElementById("inside");
+
+    const openBtn = document.getElementById("openBtn");
+    const closeBtn = document.getElementById("closeBtn");
+
+    const moreBtn = document.getElementById("moreBtn");
+    const moreContent = document.getElementById("moreContent");
+
+    const musicBtn = document.getElementById("musicBtn");
+
+
+    /* =====================================
+       ABRIR CARTA
+    ===================================== */
+
+    openBtn.addEventListener("click", () => {
+
+      intro.classList.remove("active");
+
+      setTimeout(() => {
+
+        inside.classList.add("active");
+
+      }, 500);
+
+    });
+
+
+    /* =====================================
+       FECHAR CARTA
+    ===================================== */
+
+    closeBtn.addEventListener("click", () => {
+
+      inside.classList.remove("active");
+
+      setTimeout(() => {
+
+        intro.classList.add("active");
+
+      }, 500);
+
+    });
+
+
+    /* =====================================
+       MOSTRAR MAIS CONTEÚDO
+    ===================================== */
+
+    moreBtn.addEventListener("click", () => {
+
+      moreContent.classList.toggle("show");
+
+      if (moreContent.classList.contains("show")) {
+
+        moreBtn.innerHTML =
+          'hide this part <span>↑</span>';
+
+      } else {
+
+        moreBtn.innerHTML =
+          "there's more here <span>→</span>";
+
+      }
+
+    });
+
+
+    /* =====================================
+       YOUTUBE PLAYER
+    ===================================== */
+
+    let player;
+
+    let youtubeReady = false;
+
+
+    function onYouTubeIframeAPIReady() {
+
+      player = new YT.Player("youtube-player", {
+
+        height: "1",
+
+        width: "1",
+
+        videoId: "cyX-BUNcCqs",
+
+        playerVars: {
+
+          autoplay: 0,
+
+          controls: 0,
+
+          disablekb: 1,
+
+          fs: 0,
+
+          iv_load_policy: 3,
+
+          modestbranding: 1,
+
+          playsinline: 1,
+
+          rel: 0,
+
+          loop: 1,
+
+          playlist: "cyX-BUNcCqs"
+
+        },
+
+        events: {
+
+          onReady: () => {
+
+            youtubeReady = true;
+
+          }
+
+        }
+
+      });
+
+    }
+
+
+    /* =====================================
+       BOTÃO DA MÚSICA
+    ===================================== */
+
+    musicBtn.addEventListener("click", () => {
+
+      if (!youtubeReady) {
+
+        musicBtn.textContent = "…";
+
+        return;
+
+      }
+
+
+      const state = player.getPlayerState();
+
+
+      if (state === YT.PlayerState.PLAYING) {
+
+        player.pauseVideo();
+
+        musicBtn.textContent = "▶";
+
+        musicBtn.setAttribute(
+          "aria-label",
+          "Tocar música"
+        );
+
+      } else {
+
+        player.playVideo();
+
+        musicBtn.textContent = "Ⅱ";
+
+        musicBtn.setAttribute(
+          "aria-label",
+          "Pausar música"
+        );
+
+      }
+
+    });
+
+
+    /* =====================================
+       ATUALIZAR BOTÃO CASO A MÚSICA TERMINE
+    ===================================== */
+
+    function onPlayerStateChange(event) {
+
+      if (event.data === YT.PlayerState.ENDED) {
+
+        musicBtn.textContent = "▶";
+
+      }
+
+    }
+
+
+    /* =====================================
+       PETALAS CAINDO
+    ===================================== */
+
+    const fallingPetals =
+      document.querySelector(".falling-petals");
+
+
+    function createPetal() {
+
+      if (!fallingPetals) return;
+
+
+      const petal =
+        document.createElement("span");
+
+
+      const symbols = [
+        "✿",
+        "❀",
+        "✽",
+        "❁",
+        "•"
+      ];
+
+
+      petal.textContent =
+        symbols[
+          Math.floor(
+            Math.random() * symbols.length
+          )
+        ];
+
+
+      petal.style.left =
+        Math.random() * 100 + "%";
+
+
+      petal.style.animationDuration =
+        (5 + Math.random() * 7) + "s";
+
+
+      petal.style.animationDelay =
+        Math.random() * 3 + "s";
+
+
+      petal.style.fontSize =
+        (10 + Math.random() * 14) + "px";
+
+
+      fallingPetals.appendChild(petal);
+
+
+      setTimeout(() => {
+
+        petal.remove();
+
+      }, 15000);
+
+    }
+
+
+    setInterval(createPetal, 700);
+
+
+  </script>
+
+</body>
+
+</html>
+```
