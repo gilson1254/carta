@@ -6,7 +6,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Um poema para você</title>
+  <title>Para você, com carinho 💛</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -21,27 +29,55 @@
 
     <div class="grain"></div>
 
+    <div class="sun-glow"></div>
 
     <!-- PÉTALAS DECORATIVAS -->
 
-    <div class="petals">
-
-      <span>✿</span>
-      <span>❀</span>
-      <span>✽</span>
-      <span>✿</span>
-      <span>❁</span>
-      <span>✽</span>
-
+    <div class="decor-petals">
+      <span>✦</span>
+      <span>·</span>
+      <span>✧</span>
+      <span>·</span>
+      <span>✦</span>
+      <span>·</span>
+      <span>✧</span>
     </div>
 
 
-    <!-- FLORES DECORATIVAS -->
+    <!-- LÍRIOS DECORATIVOS -->
 
-    <div class="floating-flower flower-a">🌻</div>
-    <div class="floating-flower flower-b">🌷</div>
-    <div class="floating-flower flower-c">🌻</div>
-    <div class="floating-flower flower-d">🌷</div>
+    <div class="intro-lily lily-left">
+      <span class="lily-stem"></span>
+      <span class="lily-leaf leaf-one"></span>
+      <span class="lily-leaf leaf-two"></span>
+
+      <span class="lily-bloom">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <b></b>
+      </span>
+    </div>
+
+
+    <div class="intro-lily lily-right">
+      <span class="lily-stem"></span>
+      <span class="lily-leaf leaf-one"></span>
+      <span class="lily-leaf leaf-two"></span>
+
+      <span class="lily-bloom">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <b></b>
+      </span>
+    </div>
 
 
     <!-- ENVELOPE -->
@@ -50,7 +86,6 @@
 
       <div class="envelope-shadow"></div>
 
-
       <button
         id="openBtn"
         class="envelope"
@@ -58,37 +93,59 @@
       >
 
         <div class="letter-peek">
-
-          <span>para você 💛</span>
-
+          <span>para você</span>
         </div>
-
 
         <div class="flap"></div>
 
         <div class="side left"></div>
-
         <div class="side right"></div>
 
         <div class="bottom"></div>
 
 
-        <!-- PEQUENO BUQUÊ -->
+        <!-- PEQUENO BUQUÊ DE LÍRIOS -->
 
         <div class="envelope-bouquet">
 
-          <span class="stem st1"></span>
-          <span class="stem st2"></span>
-          <span class="stem st3"></span>
+          <span class="mini-stem stem-one"></span>
+          <span class="mini-stem stem-two"></span>
+          <span class="mini-stem stem-three"></span>
 
-          <span class="leaf lf1"></span>
-          <span class="leaf lf2"></span>
-          <span class="leaf lf3"></span>
-          <span class="leaf lf4"></span>
+          <span class="mini-leaf leaf-one"></span>
+          <span class="mini-leaf leaf-two"></span>
+          <span class="mini-leaf leaf-three"></span>
 
-          <span class="flower-mini fm1">🌻</span>
-          <span class="flower-mini fm2">🌻</span>
-          <span class="flower-mini fm3">🌷</span>
+
+          <span class="mini-lily mini-one">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <b></b>
+          </span>
+
+          <span class="mini-lily mini-two">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <b></b>
+          </span>
+
+          <span class="mini-lily mini-three">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <b></b>
+          </span>
 
         </div>
 
@@ -100,14 +157,14 @@
     </div>
 
 
-    <!-- FRASE DA ABERTURA -->
+    <!-- TEXTO -->
 
     <div class="hint">
 
-      <span class="heart">♡</span>
+      <span class="hint-heart">♡</span>
 
       <span>
-        para alguém que faz meu mundo mais bonito
+        para alguém que faz meus dias mais bonitos
       </span>
 
       <small>
@@ -121,20 +178,44 @@
 
 
   <!-- =====================================================
-       CARTA ABERTA
+       CARTA
   ====================================================== -->
 
   <div id="inside" class="scene">
 
     <div class="inside-bg"></div>
 
+    <div class="golden-rays"></div>
+
     <div class="falling-petals"></div>
 
 
+    <!-- FLORES DE FUNDO -->
+
+    <div class="background-bloom bloom-one">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <b></b>
+    </div>
+
+    <div class="background-bloom bloom-two">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <b></b>
+    </div>
+
+
+    <!-- CARTA -->
+
     <main class="letter-card">
-
-
-      <!-- FECHAR -->
 
       <button
         id="closeBtn"
@@ -145,56 +226,71 @@
       </button>
 
 
-      <!-- TOPO -->
+      <!-- DECORAÇÃO -->
 
       <div class="top-decoration">
 
         <span>❦</span>
-        <span>🌻</span>
-        <span>🌷</span>
+
+        <div class="small-lily">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <b></b>
+        </div>
+
         <span>❦</span>
 
       </div>
 
 
       <p class="eyebrow">
-        UMA PEQUENA CARTA PARA VOCÊ
+        UMA CARTA FEITA PENSANDO EM VOCÊ
       </p>
 
 
       <h1>
-
-        Feita de<br>
-
-        <em>amor</em>,
-
-        flores e<br>
-
-        <span>um pouquinho de amarelo</span>
-
+        Algumas palavras<br>
+        feitas de <em>amor</em>
       </h1>
 
 
-      <!-- =================================================
-           FLORES
-      ================================================== -->
+      <p class="subtitle">
+        e de todas as pequenas coisas<br>
+        que fazem você ser você.
+      </p>
 
-      <div class="flower-garden">
 
-        <div class="garden-flower sunflower-one">
-          🌻
-        </div>
+      <!-- LÍRIO CENTRAL -->
 
-        <div class="garden-flower lily-one">
-          🌷
-        </div>
+      <div class="hero-lily">
 
-        <div class="garden-flower sunflower-two">
-          🌻
-        </div>
+        <div class="hero-stem"></div>
 
-        <div class="garden-flower lily-two">
-          🌷
+        <div class="hero-leaf hero-leaf-one"></div>
+        <div class="hero-leaf hero-leaf-two"></div>
+
+        <div class="hero-bloom">
+
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+
+          <span class="stamen s1"></span>
+          <span class="stamen s2"></span>
+          <span class="stamen s3"></span>
+          <span class="stamen s4"></span>
+          <span class="stamen s5"></span>
+          <span class="stamen s6"></span>
+
+          <b></b>
+
         </div>
 
       </div>
@@ -205,7 +301,6 @@
       ================================================== -->
 
       <section class="poem">
-
 
         <h2>
           você é o meu verso favorito
@@ -562,33 +657,11 @@
 
         <p class="final-lines">
 
-          <strong>
-            você é o meu verso favorito,
-          </strong>
-
-          <br>
-
-          <strong>
-            a minha coincidência favorita,
-          </strong>
-
-          <br>
-
-          <strong>
-            o meu pensamento favorito
-          </strong>
-
-          <br>
-
-          <strong>
-            e, sem dúvida nenhuma,
-          </strong>
-
-          <br>
-
-          <strong>
-            a minha pessoa favorita.
-          </strong>
+          <strong>você é o meu verso favorito,</strong><br>
+          <strong>a minha coincidência favorita,</strong><br>
+          <strong>o meu pensamento favorito</strong><br>
+          <strong>e, sem dúvida nenhuma,</strong><br>
+          <strong>a minha pessoa favorita.</strong>
 
         </p>
 
@@ -598,6 +671,13 @@
       <!-- =================================================
            MÚSICA
       ================================================== -->
+
+      <div class="music-divider">
+        <span></span>
+        <b>♪</b>
+        <span></span>
+      </div>
+
 
       <button id="moreBtn" class="more">
 
@@ -613,27 +693,18 @@
         class="more-content"
       >
 
-        <div class="line"></div>
-
-
-        <p>
-          Você chegou até aqui. 💛
+        <p class="music-intro">
+          Porque algumas músicas<br>
+          simplesmente parecem ter sido feitas<br>
+          para certos momentos.
         </p>
 
-
-        <p>
-          Então deixa essa música tocar.
-        </p>
-
-
-        <!-- FITA -->
 
         <div class="cassette">
 
           <div class="cassette-label">
-            uma música que me lembra você
+            uma música para você
           </div>
-
 
           <div class="cassette-window">
 
@@ -643,10 +714,10 @@
 
           </div>
 
+          <div class="cassette-line"></div>
+
         </div>
 
-
-        <!-- PLAYER -->
 
         <div class="music">
 
@@ -657,7 +728,7 @@
             </strong>
 
             <small>
-              aperte para ouvir ♫
+              deixe a música tocar ♫
             </small>
 
           </div>
@@ -674,26 +745,38 @@
 
       </section>
 
+
+      <div class="bottom-flower">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <b></b>
+
+      </div>
+
+
+      <p class="signature">
+        com carinho,<br>
+        <strong>G.</strong>
+      </p>
+
     </main>
 
   </div>
 
 
-
   <!-- =====================================================
        PLAYER DO YOUTUBE
-       Vídeo: cyX-BUNcCqs
   ====================================================== -->
 
   <div id="youtube-player"></div>
 
 
-  <!-- API DO YOUTUBE -->
-
   <script src="https://www.youtube.com/iframe_api"></script>
-
-
-  <!-- JAVASCRIPT -->
 
   <script src="script.js"></script>
 
